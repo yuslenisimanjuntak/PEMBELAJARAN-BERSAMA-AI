@@ -6,70 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Membuat Web Pribadi</title>
 
-.kotak-kode {
-    background: #172638;
-    color: #e8f0fa;
-    padding: 18px;
-    border-radius: 10px;
-    margin-top: 15px;
-}
-
-.kotak-kode textarea {
-    width: 100%;
-    height: 300px;
-    background: #172638;
-    color: #e8f0fa;
-    border: 1px solid #60758c;
-    padding: 15px;
-    border-radius: 8px;
-    font-family: monospace;
-    font-size: 14px;
-    resize: vertical;
-}
-
-.tombol-salin {
-    background: #f5a33d;
-    color: #17344e;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 7px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 12px;
-}
-.tombol-salin {
-    background: #f5a33d;
-    color: #17344e;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 7px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 12px;
-}
-
-/* CSS untuk kotak kode */
-.kotak-kode {
-    background: #172638;
-    color: #e8f0fa;
-    padding: 18px;
-    border-radius: 10px;
-    margin-top: 15px;
-}
-
-.kotak-kode textarea {
-    width: 100%;
-    height: 300px;
-    background: #172638;
-    color: #e8f0fa;
-    border: 1px solid #60758c;
-    padding: 15px;
-    border-radius: 8px;
-    font-family: monospace;
-    font-size: 14px;
-    resize: vertical;
-}
-</style>
 <style>
 * {
     box-sizing: border-box;
@@ -92,6 +28,7 @@ header {
 
 header h1 {
     font-size: 30px;
+    margin: 0;
 }
 
 .container {
@@ -164,6 +101,48 @@ code {
     font-weight: bold;
 }
 
+/* Kotak contoh kode HTML */
+.kotak-kode {
+    background: #172638;
+    color: #e8f0fa;
+    padding: 18px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.kotak-kode textarea {
+    width: 100%;
+    height: 350px;
+    background: #172638;
+    color: #e8f0fa;
+    border: 1px solid #60758c;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 14px;
+    resize: vertical;
+}
+
+.tombol-salin {
+    background: #f5a33d;
+    color: #17344e;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+.tombol-salin:hover {
+    background: #ffc36e;
+}
+
+#pesan-salin {
+    color: #b9f5cb;
+    font-weight: bold;
+}
+
 footer {
     background: #12345a;
     color: white;
@@ -176,8 +155,13 @@ footer {
     header h1 {
         font-size: 23px;
     }
+
     .materi {
         padding: 20px;
+    }
+
+    .langkah {
+        font-size: 15px;
     }
 }
 </style>
@@ -377,6 +361,7 @@ di komputer masing-masing.
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Website Pribadi Saya</title>
+
 <style>
 body {
     font-family: Arial, sans-serif;
@@ -384,6 +369,7 @@ body {
     text-align: center;
     padding: 40px;
 }
+
 .kartu {
     background: white;
     max-width: 600px;
@@ -391,11 +377,13 @@ body {
     padding: 30px;
     border-radius: 15px;
 }
+
 h1 {
     color: #174a78;
 }
 </style>
 </head>
+
 <body>
 
 <div class="kartu">
@@ -406,32 +394,14 @@ h1 {
     <p>Saya senang belajar teknologi dan AI.</p>
 </div>
 
-<script>
-function salinKode() {
-    const area = document.getElementById("kode-contoh");
-
-    navigator.clipboard.writeText(area.value)
-    .then(() => {
-        document.getElementById("pesan-salin").innerText =
-        "Kode berhasil disalin! Silakan tempelkan di editor HTML.";
-    })
-    .catch(() => {
-        area.select();
-        document.execCommand("copy");
-        document.getElementById("pesan-salin").innerText =
-        "Kode berhasil disalin!";
-    });
-}
-</script>
-
 </body>
 </html></textarea>
 
-<button class="tombol-salin" onclick="salinKode()">
+<button type="button" class="tombol-salin" onclick="salinKode()">
     Salin Kode HTML
 </button>
 
-<p id="pesan-salin"></p>
+<p id="pesan-salin" aria-live="polite"></p>
 
 </div>
 
@@ -450,6 +420,27 @@ function salinKode() {
     <p>© 2026 Pembelajaran Bersama AI</p>
     <p>Belajar, Berkarya, dan Berinovasi</p>
 </footer>
+
+<script>
+async function salinKode() {
+    const area = document.getElementById("kode-contoh");
+    const pesan = document.getElementById("pesan-salin");
+
+    try {
+        await navigator.clipboard.writeText(area.value);
+        pesan.innerText = "Berhasil! Kode HTML sudah disalin.";
+    } catch (error) {
+        area.focus();
+        area.select();
+
+        const berhasil = document.execCommand("copy");
+
+        pesan.innerText = berhasil
+            ? "Berhasil! Kode HTML sudah disalin."
+            : "Silakan pilih dan salin kode secara manual.";
+    }
+}
+</script>
 
 </body>
 </html>
