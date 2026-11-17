@@ -301,4 +301,32 @@ document.getElementById("formKuis").addEventListener("submit", async function(ev
         "Nilai Anda: " + nilai;
 
     document.getElementById("benar").textContent =
-        "Jumlah jawaban benar
+    "Jumlah jawaban benar: " + jumlahBenar + " dari 5 soal";
+
+// Mengirim hasil kuis ke Google Sheets
+const data = {
+    nama: nama,
+    kelas: kelas,
+    nilai: nilai,
+    jumlahBenar: jumlahBenar
+};
+
+fetch(SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+    },
+    body: JSON.stringify(data)
+})
+.then(() => {
+    alert("Hasil kuis telah dikirim. Silakan periksa Google Sheets.");
+})
+.catch((error) => {
+    alert("Pengiriman gagal: " + error);
+});
+
+}
+</script>
+</body>
+</html>
