@@ -6,6 +6,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Membuat Web Pribadi</title>
 
+.kotak-kode {
+    background: #172638;
+    color: #e8f0fa;
+    padding: 18px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.kotak-kode textarea {
+    width: 100%;
+    height: 300px;
+    background: #172638;
+    color: #e8f0fa;
+    border: 1px solid #60758c;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 14px;
+    resize: vertical;
+}
+
+.tombol-salin {
+    background: #f5a33d;
+    color: #17344e;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
 <style>
 * {
     box-sizing: border-box;
@@ -295,6 +327,81 @@ footer {
         Bagikan alamat website kepada teman,
         guru, atau orang lain.
     </div>
+</div>
+
+<h2>Praktik: Membuat Website Pribadi</h2>
+
+<p>
+Berikut contoh kode HTML sederhana untuk membuat
+website pribadi. Silakan salin kode dan praktikkan
+di komputer masing-masing.
+</p>
+
+<div class="kotak-kode">
+
+<textarea id="kode-contoh" readonly><!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Pribadi Saya</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f4f8;
+    text-align: center;
+    padding: 40px;
+}
+.kartu {
+    background: white;
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+}
+h1 {
+    color: #174a78;
+}
+</style>
+</head>
+<body>
+
+<div class="kartu">
+    <h1>Selamat Datang!</h1>
+    <h2>Nama Saya: Tuliskan Nama Anda</h2>
+    <p>Saya sedang belajar membuat website pribadi.</p>
+    <h3>Tentang Saya</h3>
+    <p>Saya senang belajar teknologi dan AI.</p>
+</div>
+
+<script>
+function salinKode() {
+    const kode = document.getElementById("kode-contoh").value;
+
+    navigator.clipboard.writeText(kode)
+    .then(() => {
+        document.getElementById("pesan-salin").innerText =
+        "Kode berhasil disalin! Silakan tempelkan di editor HTML.";
+    })
+    .catch(() => {
+        const area = document.getElementById("kode-contoh");
+        area.select();
+        document.execCommand("copy");
+        document.getElementById("pesan-salin").innerText =
+        "Kode berhasil disalin!";
+    });
+}
+</script>
+
+</body>
+</html></textarea>
+
+<button class="tombol-salin" onclick="salinKode()">
+    Salin Kode HTML
+</button>
+
+<p id="pesan-salin"></p>
+
 </div>
 
 <div class="tips">
