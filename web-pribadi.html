@@ -37,7 +37,39 @@
     cursor: pointer;
     margin-top: 12px;
 }
+.tombol-salin {
+    background: #f5a33d;
+    color: #17344e;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 12px;
+}
 
+/* CSS untuk kotak kode */
+.kotak-kode {
+    background: #172638;
+    color: #e8f0fa;
+    padding: 18px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.kotak-kode textarea {
+    width: 100%;
+    height: 300px;
+    background: #172638;
+    color: #e8f0fa;
+    border: 1px solid #60758c;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 14px;
+    resize: vertical;
+}
+</style>
 <style>
 * {
     box-sizing: border-box;
@@ -376,15 +408,14 @@ h1 {
 
 <script>
 function salinKode() {
-    const kode = document.getElementById("kode-contoh").value;
+    const area = document.getElementById("kode-contoh");
 
-    navigator.clipboard.writeText(kode)
+    navigator.clipboard.writeText(area.value)
     .then(() => {
         document.getElementById("pesan-salin").innerText =
         "Kode berhasil disalin! Silakan tempelkan di editor HTML.";
     })
     .catch(() => {
-        const area = document.getElementById("kode-contoh");
         area.select();
         document.execCommand("copy");
         document.getElementById("pesan-salin").innerText =
