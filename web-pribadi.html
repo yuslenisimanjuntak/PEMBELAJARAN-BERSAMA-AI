@@ -27,142 +27,105 @@ header {
 }
 
 header h1 {
+    margin: 0;
     font-size: 30px;
-    margin-bottom: 8px;
 }
 
 header p {
-    font-size: 16px;
+    margin-bottom: 0;
 }
 
 .container {
-    max-width: 1100px;
-    margin: 35px auto;
-    padding: 0 20px;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 18px;
 }
 
 .kembali {
     display: inline-block;
-    margin-bottom: 20px;
-    color: #1769aa;
+    background: #12345a;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 7px;
     text-decoration: none;
-    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .materi {
     background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+    padding: 25px;
+    margin-bottom: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
 }
 
-h2 {
-    color: #173f69;
-    margin-top: 32px;
-    margin-bottom: 15px;
+.materi h2 {
+    color: #1763a6;
+    margin-top: 0;
 }
 
-h3 {
-    color: #174c7e;
-    margin-bottom: 10px;
-}
-
-p {
-    margin-bottom: 12px;
-}
-
-.langkah {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin: 17px 0;
-    font-size: 16px;
+.materi h3 {
+    color: #2675bd;
 }
 
 .nomor {
-    background: #f5a33d;
-    color: #17344e;
-    min-width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 19px;
+    display: inline-block;
+    background: #2675bd;
+    color: white;
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-right: 7px;
 }
 
-.isi {
-    padding-top: 3px;
-}
-
-code {
-    background: #edf2f7;
-    padding: 3px 7px;
-    border-radius: 5px;
-    color: #315477;
-}
-
-.kotak-info {
-    background: #eaf3ff;
+.catatan {
+    background: #eaf4ff;
     border-left: 5px solid #2675bd;
-    padding: 18px;
-    border-radius: 8px;
-    margin: 20px 0;
+    padding: 14px;
+    margin: 15px 0;
+    border-radius: 5px;
 }
 
-.kotak-prompt {
+.perhatian {
+    background: #fff5df;
+    border-left: 5px solid #e6a23c;
+    padding: 14px;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+.kotak-kode {
     background: #172638;
     color: #e8f0fa;
     padding: 18px;
     border-radius: 10px;
-    margin: 15px 0;
+    margin-top: 15px;
 }
 
-.kotak-prompt textarea {
+.kotak-kode textarea {
     width: 100%;
-    min-height: 270px;
-    background: #172638;
-    color: #e8f0fa;
-    border: 1px solid #60758c;
-    padding: 15px;
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.6;
+    min-height: 310px;
+    padding: 12px;
+    border-radius: 7px;
+    border: none;
+    font-family: Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.5;
     resize: vertical;
 }
 
 .tombol-salin {
-    background: #f5a33d;
-    color: #17344e;
+    background: #f0a43a;
+    color: #172638;
     border: none;
-    padding: 12px 20px;
+    padding: 10px 18px;
     border-radius: 7px;
-    font-weight: bold;
     cursor: pointer;
-    margin-top: 12px;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 .tombol-salin:hover {
-    background: #ffc36e;
-}
-
-.pesan-salin {
-    color: #b9f5cb;
-    font-weight: bold;
-    margin-top: 8px;
-}
-
-.tips {
-    background: #fff3df;
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 25px;
-}
-
-.tips h3 {
-    margin-top: 0;
+    background: #ffc15f;
 }
 
 footer {
@@ -170,21 +133,7 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
-    margin-top: 45px;
-}
-
-@media(max-width: 600px) {
-    header h1 {
-        font-size: 24px;
-    }
-
-    .materi {
-        padding: 20px;
-    }
-
-    .langkah {
-        font-size: 15px;
-    }
+    margin-top: 40px;
 }
 </style>
 </head>
@@ -193,351 +142,222 @@ footer {
 
 <header>
     <h1>MEMBUAT WEBSITE DENGAN AI DAN GITHUB</h1>
-    <p>Belajar Membuat Website dari Ide hingga Terbit di Internet</p>
+    <p>Belajar membuat website pembelajaran secara bertahap</p>
 </header>
 
 <div class="container">
 
-<a href="index.html" class="kembali">
-    ← Kembali ke Halaman Utama
-</a>
+<a class="kembali" href="index.html">← Kembali ke Halaman Utama</a>
 
-<div class="materi">
+<section class="materi">
+    <h2>Tujuan Pembelajaran</h2>
+    <p>Setelah mempelajari materi ini, Bapak/Ibu guru diharapkan mampu:</p>
+    <ul>
+        <li>Membuat repository baru di GitHub.</li>
+        <li>Meminta bantuan AI untuk membuat kode website.</li>
+        <li>Memasukkan kode HTML ke GitHub.</li>
+        <li>Menerbitkan website menggunakan GitHub Pages.</li>
+        <li>Memahami cara mengembangkan kuis dan menyimpan hasil belajar siswa.</li>
+    </ul>
+</section>
 
-<p>
-Pada materi ini, kita akan belajar membuat website
-dengan bantuan Artificial Intelligence (AI) dan
-menggunakan GitHub untuk menyimpan serta menerbitkan
-website tersebut.
-</p>
+<section class="materi">
+    <h2><span class="nomor">1</span> Membuat Repository Website</h2>
 
-<div class="kotak-info">
-    <b>Tujuan pembelajaran:</b>
-    <p>
-    Setelah mempelajari materi ini, guru diharapkan
-    mampu meminta AI membuat kode website, menyalin
-    kode tersebut, memasukkannya ke GitHub, dan
-    menerbitkan website menggunakan GitHub Pages.
-    </p>
-</div>
+    <p>Repository adalah tempat untuk menyimpan file dan kode website kita di GitHub.</p>
 
-<h2>Langkah 1: Membuat Repository Website</h2>
+    <h3>Langkah-langkah:</h3>
+    <ol>
+        <li>Buka situs <a href="https://github.com" target="_blank">https://github.com</a>, kemudian masuk menggunakan akun GitHub.</li>
+        <li>Klik tanda <b>+</b> di bagian kanan atas halaman GitHub.</li>
+        <li>Pilih menu <b>New repository</b>.</li>
+        <li>Masukkan nama repository, misalnya <b>kuis-matematika</b>.</li>
+        <li>Pada bagian <b>Add README</b>, pilih <b>On</b> agar file README dibuat sejak awal.</li>
+        <li>Pastikan pengaturan repository sesuai kebutuhan. Untuk latihan ini, pilih <b>Public</b>.</li>
+        <li>Klik tombol <b>Create repository</b>.</li>
+    </ol>
 
-<p>
-Repository adalah tempat untuk menyimpan file dan
-kode website di GitHub.
-</p>
-
-<div class="langkah">
-    <div class="nomor">1</div>
-    <div class="isi">
-        Masuk ke akun GitHub masing-masing.
+    <div class="catatan">
+        <b>Catatan:</b> README adalah file yang dapat digunakan untuk memberikan keterangan tentang proyek website kita. Memilih On akan membuat file README.md secara otomatis.
     </div>
-</div>
+</section>
 
-<div class="langkah">
-    <div class="nomor">2</div>
-    <div class="isi">
-        Klik tombol <b>New</b> untuk membuat repository baru.
+<section class="materi">
+    <h2><span class="nomor">2</span> Meminta AI Membuat Kode Website</h2>
+
+    <p>Setelah repository dibuat, kita dapat meminta bantuan AI untuk membuat kode website. Kita tidak harus menguasai seluruh bahasa pemrograman terlebih dahulu.</p>
+
+    <p>Contohnya, kita ingin membuat website kuis matematika untuk siswa SMA.</p>
+
+    <h3>Contoh prompt untuk AI</h3>
+    <p>Salin prompt berikut, kemudian tempelkan ke ChatGPT.</p>
+
+    <div class="kotak-kode">
+        <textarea id="prompt-contoh" readonly>Buatkan kode lengkap website kuis matematika untuk siswa SMA.
+
+Ketentuan:
+1. Buat 5 soal pilihan ganda dengan pilihan A, B, C, D, dan E.
+2. Sediakan tempat untuk mengisi nama dan kelas siswa.
+3. Sediakan tombol untuk mengirim jawaban.
+4. Hitung nilai siswa secara otomatis.
+5. Tampilkan nilai dan pembahasan setelah siswa selesai.
+6. Sediakan tombol untuk mengulang kuis.
+7. Buat tampilan menarik, sederhana, dan responsif untuk HP maupun komputer.
+8. Gabungkan HTML, CSS, dan JavaScript dalam satu file bernama index.html.
+9. Tampilkan seluruh kode secara lengkap agar dapat disalin ke GitHub.
+10. Jelaskan cara menghubungkan kuis dengan Google Sheets menggunakan Google Apps Script agar guru dapat melihat nama, kelas, nilai, dan waktu pengerjaan siswa.
+
+Jangan menggunakan pustaka eksternal.</textarea>
+
+        <button class="tombol-salin" onclick="salinTeks('prompt-contoh','pesan-prompt')">Salin Prompt</button>
+        <p id="pesan-prompt"></p>
     </div>
-</div>
 
-<div class="langkah">
-    <div class="nomor">3</div>
-    <div class="isi">
-        Isi nama repository, misalnya
-        <code>website-kuis-matematika</code>.
+    <div class="catatan">
+        <b>Ingat:</b> Prompt adalah perintah atau instruksi yang kita berikan kepada AI. Semakin jelas instruksinya, semakin sesuai hasil yang diharapkan.
     </div>
-</div>
+</section>
 
-<div class="langkah">
-    <div class="nomor">4</div>
-    <div class="isi">
-        Pilih <b>Public</b> agar website dapat diakses
-        oleh orang lain.
+<section class="materi">
+    <h2><span class="nomor">3</span> Mengambil Kode dari AI</h2>
+
+    <ol>
+        <li>Setelah AI memberikan kode, perhatikan bagian kode HTML yang ditampilkan.</li>
+        <li>Klik tombol <b>Copy</b> pada bagian kode, jika tersedia.</li>
+        <li>Jika tidak tersedia, blok seluruh kode kemudian tekan <b>Ctrl + C</b>.</li>
+        <li>Kode tersebut sudah siap dimasukkan ke GitHub.</li>
+    </ol>
+
+    <div class="catatan">
+        <b>Tips:</b> Pastikan seluruh kode disalin, mulai dari bagian awal sampai bagian akhir. Jangan hanya menyalin sebagian kode.
     </div>
-</div>
+</section>
 
-<div class="langkah">
-    <div class="nomor">5</div>
-    <div class="isi">
-        Klik <b>Create repository</b>.
+<section class="materi">
+    <h2><span class="nomor">4</span> Membuat File index.html di GitHub</h2>
+
+    <ol>
+        <li>Buka repository yang sudah dibuat.</li>
+        <li>Klik tombol <b>Add file</b>.</li>
+        <li>Pilih <b>Create new file</b>.</li>
+        <li>Pada kolom nama file, ketik <b>index.html</b>.</li>
+        <li>Tempel kode dari AI ke area editor dengan menekan <b>Ctrl + V</b>.</li>
+    </ol>
+
+    <div class="perhatian">
+        <b>Perhatian:</b> Nama file harus tepat <b>index.html</b>. Jangan sampai tertulis index.html.txt.
     </div>
-</div>
+</section>
 
-<h2>Langkah 2: Meminta AI Membuat Kode Website</h2>
+<section class="materi">
+    <h2><span class="nomor">5</span> Menyimpan Kode di GitHub</h2>
 
-<p>
-Kita dapat meminta bantuan ChatGPT atau AI lainnya
-untuk membuat kode website. Agar hasilnya sesuai
-kebutuhan, kita harus memberikan instruksi atau
-prompt yang jelas.
-</p>
+    <ol>
+        <li>Setelah kode ditempel, periksa kembali apakah seluruh kode sudah masuk.</li>
+        <li>Klik tombol <b>Commit changes</b>.</li>
+        <li>Jika muncul kotak konfirmasi, isi keterangan perubahan bila diperlukan.</li>
+        <li>Klik kembali <b>Commit changes</b> untuk menyimpan.</li>
+    </ol>
 
-<h3>Contoh prompt untuk membuat kuis matematika</h3>
+    <p>Setelah disimpan, file index.html akan muncul di repository.</p>
+</section>
 
-<p>
-Salin prompt berikut, kemudian tempelkan ke ChatGPT
-atau AI yang Anda gunakan.
-</p>
+<section class="materi">
+    <h2><span class="nomor">6</span> Mengaktifkan GitHub Pages</h2>
 
-<div class="kotak-prompt">
+    <p>GitHub Pages digunakan untuk menerbitkan file website agar dapat dibuka melalui internet.</p>
 
-<textarea id="prompt-contoh" readonly>Buatkan kode HTML lengkap untuk website kuis matematika dengan ketentuan:
+    <ol>
+        <li>Buka repository GitHub.</li>
+        <li>Klik menu <b>Settings</b>.</li>
+        <li>Pilih menu <b>Pages</b> di bagian pengaturan.</li>
+        <li>Pada bagian <b>Build and deployment</b>, pilih sumber <b>Deploy from a branch</b>.</li>
+        <li>Pada bagian Branch, pilih <b>main</b>.</li>
+        <li>Pada bagian folder, pilih <b>/(root)</b>.</li>
+        <li>Klik <b>Save</b>.</li>
+        <li>Tunggu proses penerbitan website selesai.</li>
+    </ol>
 
-1. Kuis terdiri dari tepat 5 soal matematika.
-2. Setiap soal berbentuk pilihan ganda dengan 5 pilihan jawaban (A, B, C, D, E).
-3. Setiap soal hanya memiliki satu jawaban benar.
-4. Sediakan tombol untuk mengirim jawaban.
-5. Setelah siswa mengirim jawaban, tampilkan nilai akhir.
-6. Tampilkan kunci jawaban dan pembahasan setiap soal.
-7. Sediakan tombol untuk mengulang kuis.
-8. Buat desain website menarik dan mudah digunakan siswa SMA.
-9. Tampilan responsif untuk komputer dan HP.
-
-Ketentuan teknis:
-- Gabungkan HTML, CSS, dan JavaScript dalam satu file.
-- Nama file adalah index.html.
-- Jangan menggunakan file tambahan atau library eksternal.
-- Pastikan semua tombol dan fitur kuis berfungsi.
-- Tampilkan seluruh kode secara lengkap dalam satu blok kode agar mudah disalin ke GitHub.</textarea>
-
-<button type="button" class="tombol-salin" onclick="salinTeks('prompt-contoh','pesan-prompt')">
-    Salin Prompt
-</button>
-
-<p id="pesan-prompt" class="pesan-salin" aria-live="polite"></p>
-
-</div>
-
-<h2>Langkah 3: Mengambil Kode dari AI</h2>
-
-<div class="langkah">
-    <div class="nomor">1</div>
-    <div class="isi">
-        Setelah prompt dikirim, AI akan membuat kode
-        website sesuai instruksi kita.
+    <div class="catatan">
+        <b>Catatan:</b> Jika website belum langsung muncul, tunggu beberapa saat lalu muat ulang halaman.
     </div>
-</div>
+</section>
 
-<div class="langkah">
-    <div class="nomor">2</div>
-    <div class="isi">
-        Cari kotak kode yang ditampilkan AI.
-        Biasanya kode ditandai dengan tulisan
-        <b>HTML</b> atau <b>html</b>.
+<section class="materi">
+    <h2><span class="nomor">7</span> Membuka dan Membagikan Website</h2>
+
+    <ol>
+        <li>Buka kembali menu <b>Settings → Pages</b>.</li>
+        <li>Perhatikan alamat website yang diberikan GitHub Pages.</li>
+        <li>Klik alamat tersebut untuk melihat website.</li>
+        <li>Salin alamat website dan bagikan kepada siswa atau guru lain.</li>
+    </ol>
+
+    <div class="catatan">
+        Website yang sudah diterbitkan dapat dibuka oleh orang lain melalui alamat tersebut, selama pengaturan aksesnya memungkinkan.
     </div>
-</div>
+</section>
 
-<div class="langkah">
-    <div class="nomor">3</div>
-    <div class="isi">
-        Klik tombol <b>Copy</b> atau ikon salin
-        pada kotak kode tersebut.
+<section class="materi">
+    <h2><span class="nomor">8</span> Bagaimana Guru Melihat Hasil Kuis Siswa?</h2>
+
+    <p>Ketika siswa mengerjakan kuis, nilai dapat ditampilkan langsung di layar siswa. Namun, ada hal penting yang perlu dipahami.</p>
+
+    <div class="perhatian">
+        <b>HTML, CSS, dan JavaScript saja belum otomatis mengirimkan hasil kuis kepada guru.</b> Hasil kuis biasa hanya tampil di perangkat siswa dan tidak otomatis tersimpan sebagai daftar nilai guru.
     </div>
-</div>
 
-<div class="langkah">
-    <div class="nomor">4</div>
-    <div class="isi">
-        Jika tidak ada tombol Copy, blok seluruh kode
-        dengan mouse, lalu tekan <b>Ctrl + C</b>.
+    <p>Agar guru dapat melihat hasil seluruh siswa, website perlu dihubungkan dengan tempat penyimpanan data.</p>
+
+    <h3>Contoh sistem yang dapat digunakan:</h3>
+    <ul>
+        <li><b>GitHub Pages:</b> untuk menampilkan website kuis.</li>
+        <li><b>Google Apps Script:</b> untuk menerima dan mengirim data hasil kuis.</li>
+        <li><b>Google Sheets:</b> untuk menyimpan nama, kelas, nilai, dan waktu pengerjaan siswa.</li>
+    </ul>
+
+    <p>Jika sudah terhubung dan diuji dengan benar, guru dapat membuka Google Sheets untuk melihat hasil pengerjaan siswa.</p>
+
+    <div class="catatan">
+        <b>Perlu diingat:</b> Menghubungkan kuis dengan Google Sheets memerlukan pengaturan tambahan. Jangan membagikan akses spreadsheet kepada siswa jika spreadsheet tersebut berisi seluruh nilai siswa.
     </div>
-</div>
+</section>
 
-<div class="kotak-info">
-    <b>Ingat!</b>
-    <p>
-    Yang kita salin adalah kode HTML, CSS, dan JavaScript
-    dari kotak kode AI, bukan penjelasan atau percakapan
-    AI di luar kotak kode.
-    </p>
-</div>
+<section class="materi">
+    <h2>Penutup</h2>
+    <p>Dengan bantuan AI dan GitHub, guru dapat mulai membuat website pembelajaran sendiri. Website tersebut dapat dikembangkan menjadi kuis, bahan ajar, media interaktif, dan berbagai kegiatan pembelajaran lainnya.</p>
 
-<h2>Langkah 4: Membuat File index.html di GitHub</h2>
+    <p>Mulailah dari proyek sederhana, kemudian kembangkan secara bertahap sesuai kebutuhan pembelajaran.</p>
+</section>
 
-<div class="langkah">
-    <div class="nomor">1</div>
-    <div class="isi">
-        Buka repository yang sudah dibuat sebelumnya.
-    </div>
-</div>
+<a class="kembali" href="index.html">← Kembali ke Halaman Utama</a>
 
-<div class="langkah">
-    <div class="nomor">2</div>
-    <div class="isi">
-        Klik <b>Add file</b>, kemudian pilih
-        <b>Create new file</b>.
-    </div>
-</div>
-
-<div class="langkah">
-    <div class="nomor">3</div>
-    <div class="isi">
-        Beri nama file <code>index.html</code>.
-    </div>
-</div>
-
-<div class="langkah">
-    <div class="nomor">4</div>
-    <div class="isi">
-        Klik area editor kode untuk menempatkan kursor.
-    </div>
-</div>
-
-<div class="langkah">
-    <div class="nomor">5</div>
-    <div class="isi">
-        Tekan <b>Ctrl + V</b> untuk menempelkan
-        kode yang sudah disalin dari AI.
-    </div>
-</div>
-
-<h2>Langkah 5: Menyimpan Kode ke GitHub</h2>
-
-<div class="langkah">
-    <div class="nomor">1</div>
-    <div class="isi">
-        Periksa kembali apakah seluruh kode sudah
-        masuk ke editor GitHub.
-    </div>
-</div>
-
-<div class="langkah">
-    <div class="nomor">2</div>
-    <div class="isi">
-        Klik <b>Commit changes</b> untuk menyimpan file.
-    </div>
-</div>
-
-<div class="langkah">
-    <div class="nomor">3</div>
-    <div class="isi">
-        Pastikan file <code>index.html</code>
-        sudah terlihat di daftar repository.
-    </div>
-</div>
-
-<h2>Langkah 6: Mengaktifkan GitHub Pages</h2>
-
-<div class="langkah">
-    <div class="nomor">1</div>
-    <div class="isi">
-        Buka menu <b>Settings</b> pada repository.
-    </div>
-</div>
-
-<div class="langkah">
-    <div class="nomor">2</div>
-    <div class="isi">
-        Pilih menu <b>Pages</b>.
-    </div>
-</div>
-
-<div class="langkah">
-    <div class="nomor">3</div>
-    <div class="isi">
-        Pada bagian sumber penerbitan, pilih branch
-        <b>main</b> dan folder <b>/(root)</b>.
-    </div>
-</div>
-
-<div class="langkah">
-    <div class="nomor">4</div>
-    <div class="isi">
-        Klik <b>Save</b> dan tunggu proses penerbitan
-        website selesai.
-    </div>
-</div>
-
-<h2>Langkah 7: Membuka dan Membagikan Website</h2>
-
-<div class="langkah">
-    <div class="nomor">1</div>
-    <div class="isi">
-        Buka kembali menu <b>Settings → Pages</b>.
-    </div>
-</div>
-
-<div class="langkah">
-    <div class="nomor">2</div>
-    <div class="isi">
-        Cari alamat website yang diberikan GitHub Pages.
-    </div>
-</div>
-
-<div class="langkah">
-    <div class="nomor">3</div>
-    <div class="isi">
-        Klik alamat tersebut untuk melihat hasil website.
-    </div>
-</div>
-
-<div class="langkah">
-    <div class="nomor">4</div>
-    <div class="isi">
-        Jika website sudah berjalan dengan baik,
-        bagikan alamatnya kepada siswa, guru,
-        atau orang lain.
-    </div>
-</div>
-
-<div class="tips">
-    <h3>Tips Penting</h3>
-    <p>
-    1. Berikan prompt yang jelas dan lengkap kepada AI.
-    </p>
-    <p>
-    2. Salin seluruh kode, jangan hanya sebagian.
-    </p>
-    <p>
-    3. Pastikan nama file adalah
-    <code>index.html</code>.
-    </p>
-    <p>
-    4. Periksa hasil website setelah diterbitkan.
-    </p>
-    <p>
-    5. Jika ada kesalahan, mintalah bantuan AI
-    untuk memperbaiki kode.
-    </p>
-</div>
-
-<div class="kotak-info">
-    <h3>Refleksi Pembelajaran</h3>
-    <p>
-    Sekarang Anda telah mempelajari cara membuat website
-    dengan bantuan AI dan GitHub. Cobalah membuat website
-    sederhana lainnya, seperti profil sekolah, media
-    pembelajaran, atau kuis matematika.
-    </p>
-</div>
-
-</div>
 </div>
 
 <footer>
-    <p>© 2026 Pembelajaran Bersama AI</p>
-    <p>Belajar, Berkarya, dan Berinovasi</p>
+    <p>Pembelajaran Bersama AI</p>
+    <p>Belajar, mencoba, dan berkarya bersama AI.</p>
 </footer>
 
 <script>
-async function salinTeks(idArea, idPesan) {
+function salinTeks(idArea, idPesan) {
     const area = document.getElementById(idArea);
     const pesan = document.getElementById(idPesan);
 
-    try {
-        await navigator.clipboard.writeText(area.value);
-        pesan.innerText = "Berhasil disalin! Silakan tempelkan ke ChatGPT.";
-    } catch (error) {
-        area.focus();
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(area.value)
+        .then(function() {
+            pesan.textContent = "Prompt berhasil disalin. Silakan tempel ke ChatGPT.";
+        })
+        .catch(function() {
+            area.select();
+            document.execCommand("copy");
+            pesan.textContent = "Silakan tempel prompt ke ChatGPT.";
+        });
+    } else {
         area.select();
-
-        const berhasil = document.execCommand("copy");
-
-        pesan.innerText = berhasil
-            ? "Berhasil disalin!"
-            : "Silakan pilih dan salin teks secara manual.";
+        document.execCommand("copy");
+        pesan.textContent = "Prompt berhasil disalin. Silakan tempel ke ChatGPT.";
     }
 }
 </script>
