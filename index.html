@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Pembelajaran Bersama AI</title>
 
     <style>
@@ -17,51 +18,89 @@
             font-family: Arial, sans-serif;
             background: #f0f5fc;
             color: #24344d;
+            line-height: 1.6;
         }
 
+        /* BAGIAN HEADER */
         header {
             background: linear-gradient(135deg, #12345a, #2675bd);
             color: white;
             text-align: center;
-            padding: 65px 20px;
+            padding: 65px 20px 50px;
         }
 
         header h1 {
             font-size: 38px;
             margin-bottom: 15px;
+            letter-spacing: 1px;
         }
 
         header p {
             font-size: 17px;
-            line-height: 1.6;
+            max-width: 650px;
+            margin: auto;
         }
 
+        /* PROFIL */
+        .profil {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .profil img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            object-position: center 30%;
+            border-radius: 50%;
+            border: 4px solid white;
+        }
+
+        .profil h3 {
+            font-size: 19px;
+            color: white;
+        }
+
+        /* BAGIAN MATERI */
         .container {
-            max-width: 1100px;
-            margin: 45px auto;
+            max-width: 1150px;
+            margin: 55px auto;
             padding: 20px;
         }
 
-        .container h2 {
+        .judul-materi {
             text-align: center;
-            margin-bottom: 35px;
+            margin-bottom: 12px;
             color: #173f69;
-            font-size: 28px;
+            font-size: 30px;
+        }
+
+        .pengantar {
+            text-align: center;
+            color: #637185;
+            margin-bottom: 38px;
         }
 
         .materi {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
+        /* KARTU MATERI */
         .card {
             background: white;
-            padding: 30px 22px;
-            border-radius: 15px;
+            padding: 30px 24px;
+            border-radius: 16px;
             text-align: center;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
             transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .card:hover {
@@ -71,7 +110,7 @@
 
         .icon {
             font-size: 55px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .card h3 {
@@ -82,9 +121,9 @@
 
         .card p {
             font-size: 15px;
-            line-height: 1.6;
-            margin-bottom: 25px;
             color: #5b6878;
+            margin-bottom: 25px;
+            flex-grow: 1;
         }
 
         .card a {
@@ -95,10 +134,31 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         .card a:hover {
             background: #10436f;
+        }
+
+        /* BAGIAN PENUTUP */
+        .pesan {
+            background: white;
+            max-width: 850px;
+            margin: 0 auto 55px;
+            padding: 28px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .pesan h2 {
+            color: #173f69;
+            margin-bottom: 10px;
+        }
+
+        .pesan p {
+            color: #5b6878;
         }
 
         footer {
@@ -106,118 +166,165 @@
             color: white;
             text-align: center;
             padding: 22px;
-            margin-top: 60px;
+        }
+
+        /* TAMPILAN HP DAN TABLET */
+        @media (max-width: 850px) {
+            .materi {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 600px) {
+            header {
+                padding: 45px 18px;
+            }
+
             header h1 {
-                font-size: 28px;
+                font-size: 27px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            .profil {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .judul-materi {
+                font-size: 25px;
+            }
+
+            .materi {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                margin: 30px auto;
             }
         }
-        
-.profil {
-    margin-top: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-}
-
-.profil img {
-    width: 85px;
-    height: 85px;
-    object-fit: cover;
-    object-position: center 30%;
-    border-radius: 50%;
-    border: 4px solid white;
-}
-
-.profil h3 {
-    font-size: 19px;
-    color: white;
-}
-
-@media (max-width: 600px) {
-    .profil {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
     </style>
 </head>
 
 <body>
 
-
-
-   
+<!-- HEADER -->
 <header>
+
     <h1>PEMBELAJARAN BERSAMA AI</h1>
+
     <p>
         Mengenal Teknologi, Mengembangkan Kreativitas,
         dan Berinovasi dalam Pembelajaran
     </p>
 
     <div class="profil">
+
         <img src="profil-yusleni.jpg"
-             alt="Foto Yusleni Juliana Simanjuntak">
+             alt="Foto profil pengelola website">
 
         <h3>Yusleni Juliana Simanjuntak</h3>
+
     </div>
 
 </header>
 
+<!-- DAFTAR MATERI -->
+<div class="container">
 
-    <div class="container">
+    <h2 class="judul-materi">Materi Pembelajaran</h2>
 
-        <h2>Materi Pembelajaran</h2>
+    <p class="pengantar">
+        Mari belajar teknologi dan kecerdasan buatan
+        melalui panduan sederhana dan praktik langsung.
+    </p>
 
-        <div class="materi">
+    <div class="materi">
 
-            <div class="card">
-                <div class="icon">💻</div>
-                <h3>Mengenal dan Membuat Akun GitHub</h3>
-                <p>
-                    Belajar mengenal GitHub, membuat akun,
-                    memahami repository, dan mengelola file.
-                </p>
-                <a href="github.html" target="_blank">
-                    Pelajari Materi
-                </a>
-            </div>
+        <!-- MATERI 1 -->
+        <div class="card">
 
-            <div class="card">
-                <div class="icon">🌐</div>
-                <h3>Membuat Web Pribadi</h3>
-                <p>
-                    Belajar membuat website pribadi menggunakan
-                    HTML, CSS, dan GitHub Pages.
-                </p>
-                <a href="web-pribadi.html" target="_blank">
-                    Pelajari Materi
-                </a>
-            </div>
+            <div class="icon">💻</div>
 
-            <div class="card">
-                <div class="icon">🤖</div>
-                <h3>Pembelajaran dengan AI</h3>
-                <p>
-                    Mengenal kecerdasan buatan dan memanfaatkannya
-                    untuk membantu proses pembelajaran.
-                </p>
-                <a href="pembelajaran-ai.html" target="_blank">
-                    Pelajari Materi
-                </a>
-            </div>
+            <h3>Mengenal dan Membuat Akun GitHub</h3>
+
+            <p>
+                Belajar mengenal GitHub, membuat akun,
+                memahami repository, dan mengelola file
+                untuk membangun website.
+            </p>
+
+            <a href="github.html" target="_blank" rel="noopener">
+                Pelajari Materi
+            </a>
 
         </div>
+
+        <!-- MATERI 2 -->
+        <div class="card">
+
+            <div class="icon">🌐</div>
+
+            <h3>Membuat Website dengan AI dan GitHub</h3>
+
+            <p>
+                Belajar membuat prompt, meminta AI menghasilkan
+                kode HTML, menyalin kode ke GitHub,
+                dan menerbitkan website menggunakan GitHub Pages.
+            </p>
+
+            <a href="web-pribadi.html" target="_blank" rel="noopener">
+                Pelajari Materi
+            </a>
+
+        </div>
+
+        <!-- MATERI 3 -->
+        <div class="card">
+
+            <div class="icon">🎓</div>
+
+            <h3>Mengembangkan Website Pembelajaran</h3>
+
+            <p>
+                Belajar mengembangkan website menjadi media
+                pembelajaran digital, seperti kuis matematika,
+                latihan soal, dan bahan ajar interaktif.
+            </p>
+
+            <a href="pembelajaran-ai.html" target="_blank" rel="noopener">
+                Pelajari Materi
+            </a>
+
+        </div>
+
     </div>
 
-    <footer>
-        <p>© 2026 Pembelajaran Bersama AI</p>
-        <p>Belajar, Berkarya, dan Berinovasi</p>
-    </footer>
+</div>
+
+<!-- PESAN PENUTUP -->
+<div class="pesan">
+
+    <h2>Belajar, Berkarya, dan Berinovasi</h2>
+
+    <p>
+        Manfaatkan teknologi dan kecerdasan buatan
+        untuk menciptakan pembelajaran yang kreatif,
+        menarik, dan bermakna.
+    </p>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+
+    <p>© 2026 Pembelajaran Bersama AI</p>
+
+    <p>Belajar, Berkarya, dan Berinovasi</p>
+
+</footer>
 
 </body>
 </html>
