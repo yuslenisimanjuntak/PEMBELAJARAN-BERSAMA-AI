@@ -1,0 +1,304 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuis Transformasi Fungsi</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f5fc;
+    color: #24344d;
+    margin: 0;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #12345a, #2675bd);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+header h1 {
+    margin: 0 0 10px;
+}
+
+.container {
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+h2 {
+    color: #174c7e;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 7px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.soal {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.pilihan {
+    display: block;
+    padding: 10px;
+    margin: 7px 0;
+    background: #f5f8fc;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.pilihan:hover {
+    background: #e4effb;
+}
+
+.pilihan input {
+    margin-right: 8px;
+}
+
+button {
+    background: #1769aa;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #10436f;
+}
+
+button:disabled {
+    background: #8299ad;
+    cursor: not-allowed;
+}
+
+#hasil {
+    display: none;
+    background: #e8f4ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#status {
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+footer {
+    background: #12345a;
+    color: white;
+    text-align: center;
+    padding: 18px;
+}
+
+@media(max-width:600px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    .container {
+        padding: 12px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>KUIS MATEMATIKA</h1>
+    <p>Transformasi Fungsi Kelas XII</p>
+    <p>Pembelajaran Bersama AI</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+    <h2>Identitas Siswa</h2>
+
+    <label for="nama">Nama lengkap</label>
+    <input type="text" id="nama" placeholder="Masukkan nama lengkap">
+
+    <label for="kelas">Kelas</label>
+    <input type="text" id="kelas" placeholder="Contoh: XII IPA 1">
+</div>
+
+<div class="card">
+    <h2>Petunjuk Pengerjaan</h2>
+    <p>
+        1. Bacalah setiap soal dengan teliti.<br>
+        2. Pilih satu jawaban yang paling tepat.<br>
+        3. Setiap soal memiliki bobot 20 poin.<br>
+        4. Setelah selesai, klik tombol Kirim Jawaban.
+    </p>
+</div>
+
+<form id="formKuis">
+
+<div class="card">
+<h2>Soal Kuis</h2>
+
+<div class="soal">
+<p><b>1.</b> Diketahui fungsi f(x) = x².
+Grafik fungsi digeser 3 satuan ke kanan.
+Bentuk fungsi hasil transformasinya adalah ....</p>
+
+<label class="pilihan"><input type="radio" name="q1" value="A"> A. y = (x + 3)²</label>
+<label class="pilihan"><input type="radio" name="q1" value="B"> B. y = (x - 3)²</label>
+<label class="pilihan"><input type="radio" name="q1" value="C"> C. y = x² + 3</label>
+<label class="pilihan"><input type="radio" name="q1" value="D"> D. y = x² - 3</label>
+<label class="pilihan"><input type="radio" name="q1" value="E"> E. y = 3x²</label>
+</div>
+
+<div class="soal">
+<p><b>2.</b> Diketahui f(x) = 2x + 1.
+Jika grafik dicerminkan terhadap sumbu-X,
+fungsi hasil transformasinya adalah ....</p>
+
+<label class="pilihan"><input type="radio" name="q2" value="A"> A. y = 2x - 1</label>
+<label class="pilihan"><input type="radio" name="q2" value="B"> B. y = -2x + 1</label>
+<label class="pilihan"><input type="radio" name="q2" value="C"> C. y = -2x - 1</label>
+<label class="pilihan"><input type="radio" name="q2" value="D"> D. y = 2x + 1</label>
+<label class="pilihan"><input type="radio" name="q2" value="E"> E. y = -2x</label>
+</div>
+
+<div class="soal">
+<p><b>3.</b> Diketahui f(x) = √x.
+Grafik digeser 4 satuan ke atas.
+Fungsi hasil transformasinya adalah ....</p>
+
+<label class="pilihan"><input type="radio" name="q3" value="A"> A. y = √(x + 4)</label>
+<label class="pilihan"><input type="radio" name="q3" value="B"> B. y = √(x - 4)</label>
+<label class="pilihan"><input type="radio" name="q3" value="C"> C. y = √x - 4</label>
+<label class="pilihan"><input type="radio" name="q3" value="D"> D. y = √x + 4</label>
+<label class="pilihan"><input type="radio" name="q3" value="E"> E. y = 4√x</label>
+</div>
+
+<div class="soal">
+<p><b>4.</b> Grafik fungsi f(x) = |x| dicerminkan
+terhadap sumbu-Y. Fungsi hasil pencerminan adalah ....</p>
+
+<label class="pilihan"><input type="radio" name="q4" value="A"> A. y = -|x|</label>
+<label class="pilihan"><input type="radio" name="q4" value="B"> B. y = |x| + 1</label>
+<label class="pilihan"><input type="radio" name="q4" value="C"> C. y = |x - 1|</label>
+<label class="pilihan"><input type="radio" name="q4" value="D"> D. y = 2|x|</label>
+<label class="pilihan"><input type="radio" name="q4" value="E"> E. y = |x|</label>
+</div>
+
+<div class="soal">
+<p><b>5.</b> Diketahui f(x) = x².
+Grafik mengalami peregangan vertikal
+dengan faktor 3. Fungsi hasil transformasinya adalah ....</p>
+
+<label class="pilihan"><input type="radio" name="q5" value="A"> A. y = (x + 3)²</label>
+<label class="pilihan"><input type="radio" name="q5" value="B"> B. y = x² + 3</label>
+<label class="pilihan"><input type="radio" name="q5" value="C"> C. y = 3x²</label>
+<label class="pilihan"><input type="radio" name="q5" value="D"> D. y = (3x)²</label>
+<label class="pilihan"><input type="radio" name="q5" value="E"> E. y = x² - 3</label>
+</div>
+
+<button type="submit" id="tombolKirim">
+    Kirim Jawaban
+</button>
+
+<div id="hasil">
+    <h2>Hasil Kuis</h2>
+    <p id="nilai"></p>
+    <p id="benar"></p>
+    <p id="status"></p>
+</div>
+
+</div>
+</form>
+</div>
+
+<footer>
+    © 2026 Pembelajaran Bersama AI
+</footer>
+
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHt18haNlom5GLiZh7g2_hEhpFech6v_UId7QbwD3OzRucmz_z1zAWB642PisWkHou/exec";
+
+const kunciJawaban = {
+    q1: "B",
+    q2: "C",
+    q3: "D",
+    q4: "E",
+    q5: "C"
+};
+
+document.getElementById("formKuis").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const nama = document.getElementById("nama").value.trim();
+    const kelas = document.getElementById("kelas").value.trim();
+
+    if (!nama || !kelas) {
+        alert("Silakan isi nama dan kelas terlebih dahulu.");
+        return;
+    }
+
+    let jumlahBenar = 0;
+
+    for (let nomor = 1; nomor <= 5; nomor++) {
+        const jawaban = document.querySelector(
+            'input[name="q' + nomor + '"]:checked'
+        );
+
+        if (!jawaban) {
+            alert("Silakan jawab semua soal terlebih dahulu.");
+            return;
+        }
+
+        if (jawaban.value === kunciJawaban["q" + nomor]) {
+            jumlahBenar++;
+        }
+    }
+
+    const nilai = jumlahBenar * 20;
+
+    document.getElementById("hasil").style.display = "block";
+    document.getElementById("nilai").textContent =
+        "Nilai Anda: " + nilai;
+
+    document.getElementById("benar").textContent =
+        "Jumlah jawaban benar
