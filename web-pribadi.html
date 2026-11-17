@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Membuat Web Pribadi</title>
+<title>Membuat Website dengan AI dan GitHub</title>
 
 <style>
 * {
@@ -13,7 +13,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #f5f7fb;
+    background: #f0f5fc;
     color: #24344d;
     margin: 0;
     line-height: 1.7;
@@ -23,18 +23,30 @@ header {
     background: linear-gradient(135deg, #12345a, #2675bd);
     color: white;
     text-align: center;
-    padding: 35px 20px;
+    padding: 45px 20px;
 }
 
 header h1 {
     font-size: 30px;
-    margin: 0;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 16px;
 }
 
 .container {
     max-width: 1100px;
     margin: 35px auto;
-    padding: 0 25px;
+    padding: 0 20px;
+}
+
+.kembali {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #1769aa;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .materi {
@@ -46,28 +58,38 @@ header h1 {
 
 h2 {
     color: #173f69;
-    margin-top: 30px;
+    margin-top: 32px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #174c7e;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 12px;
 }
 
 .langkah {
     display: flex;
     align-items: flex-start;
-    gap: 18px;
-    margin: 18px 0;
-    font-size: 17px;
+    gap: 15px;
+    margin: 17px 0;
+    font-size: 16px;
 }
 
 .nomor {
     background: #f5a33d;
     color: #17344e;
-    min-width: 42px;
-    height: 42px;
+    min-width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 19px;
 }
 
 .isi {
@@ -81,46 +103,33 @@ code {
     color: #315477;
 }
 
-.tips {
-    background: #fff3df;
-    padding: 20px;
-    border-radius: 15px;
-    margin-top: 25px;
+.kotak-info {
+    background: #eaf3ff;
+    border-left: 5px solid #2675bd;
+    padding: 18px;
+    border-radius: 8px;
+    margin: 20px 0;
 }
 
-.tips h3 {
-    margin-top: 0;
-    color: #173f69;
-}
-
-.kembali {
-    display: inline-block;
-    margin-bottom: 20px;
-    color: #1769aa;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Kotak kode HTML */
-.kotak-kode {
+.kotak-prompt {
     background: #172638;
     color: #e8f0fa;
     padding: 18px;
     border-radius: 10px;
-    margin-top: 15px;
+    margin: 15px 0;
 }
 
-.kotak-kode textarea {
-    display: block;
+.kotak-prompt textarea {
     width: 100%;
-    height: 350px;
+    min-height: 270px;
     background: #172638;
     color: #e8f0fa;
     border: 1px solid #60758c;
     padding: 15px;
     border-radius: 8px;
-    font-family: monospace;
+    font-family: Arial, sans-serif;
     font-size: 14px;
+    line-height: 1.6;
     resize: vertical;
 }
 
@@ -139,9 +148,21 @@ code {
     background: #ffc36e;
 }
 
-#pesan-salin {
+.pesan-salin {
     color: #b9f5cb;
     font-weight: bold;
+    margin-top: 8px;
+}
+
+.tips {
+    background: #fff3df;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 25px;
+}
+
+.tips h3 {
+    margin-top: 0;
 }
 
 footer {
@@ -154,7 +175,7 @@ footer {
 
 @media(max-width: 600px) {
     header h1 {
-        font-size: 23px;
+        font-size: 24px;
     }
 
     .materi {
@@ -171,8 +192,8 @@ footer {
 <body>
 
 <header>
-    <h1>MEMBUAT WEB PRIBADI</h1>
-    <p>Belajar Membuat Website dari Nol</p>
+    <h1>MEMBUAT WEBSITE DENGAN AI DAN GITHUB</h1>
+    <p>Belajar Membuat Website dari Ide hingga Terbit di Internet</p>
 </header>
 
 <div class="container">
@@ -183,59 +204,169 @@ footer {
 
 <div class="materi">
 
-<h2>Langkah 1: Mengenal Website Pribadi</h2>
+<p>
+Pada materi ini, kita akan belajar membuat website
+dengan bantuan Artificial Intelligence (AI) dan
+menggunakan GitHub untuk menyimpan serta menerbitkan
+website tersebut.
+</p>
+
+<div class="kotak-info">
+    <b>Tujuan pembelajaran:</b>
+    <p>
+    Setelah mempelajari materi ini, guru diharapkan
+    mampu meminta AI membuat kode website, menyalin
+    kode tersebut, memasukkannya ke GitHub, dan
+    menerbitkan website menggunakan GitHub Pages.
+    </p>
+</div>
+
+<h2>Langkah 1: Membuat Repository Website</h2>
+
+<p>
+Repository adalah tempat untuk menyimpan file dan
+kode website di GitHub.
+</p>
 
 <div class="langkah">
     <div class="nomor">1</div>
     <div class="isi">
-        Website pribadi adalah halaman internet
-        yang dibuat untuk memperkenalkan diri,
-        menampilkan karya, pengalaman, dan informasi.
+        Masuk ke akun GitHub masing-masing.
     </div>
 </div>
 
 <div class="langkah">
     <div class="nomor">2</div>
     <div class="isi">
-        Website pribadi dapat digunakan sebagai
-        portofolio digital, media berbagi informasi,
-        dan tempat menampilkan hasil karya.
+        Klik tombol <b>New</b> untuk membuat repository baru.
     </div>
 </div>
 
-<h2>Langkah 2: Mengenal HTML dan CSS</h2>
+<div class="langkah">
+    <div class="nomor">3</div>
+    <div class="isi">
+        Isi nama repository, misalnya
+        <code>website-kuis-matematika</code>.
+    </div>
+</div>
+
+<div class="langkah">
+    <div class="nomor">4</div>
+    <div class="isi">
+        Pilih <b>Public</b> agar website dapat diakses
+        oleh orang lain.
+    </div>
+</div>
+
+<div class="langkah">
+    <div class="nomor">5</div>
+    <div class="isi">
+        Klik <b>Create repository</b>.
+    </div>
+</div>
+
+<h2>Langkah 2: Meminta AI Membuat Kode Website</h2>
+
+<p>
+Kita dapat meminta bantuan ChatGPT atau AI lainnya
+untuk membuat kode website. Agar hasilnya sesuai
+kebutuhan, kita harus memberikan instruksi atau
+prompt yang jelas.
+</p>
+
+<h3>Contoh prompt untuk membuat kuis matematika</h3>
+
+<p>
+Salin prompt berikut, kemudian tempelkan ke ChatGPT
+atau AI yang Anda gunakan.
+</p>
+
+<div class="kotak-prompt">
+
+<textarea id="prompt-contoh" readonly>Buatkan kode HTML lengkap untuk website kuis matematika dengan ketentuan:
+
+1. Kuis terdiri dari tepat 5 soal matematika.
+2. Setiap soal berbentuk pilihan ganda dengan 5 pilihan jawaban (A, B, C, D, E).
+3. Setiap soal hanya memiliki satu jawaban benar.
+4. Sediakan tombol untuk mengirim jawaban.
+5. Setelah siswa mengirim jawaban, tampilkan nilai akhir.
+6. Tampilkan kunci jawaban dan pembahasan setiap soal.
+7. Sediakan tombol untuk mengulang kuis.
+8. Buat desain website menarik dan mudah digunakan siswa SMA.
+9. Tampilan responsif untuk komputer dan HP.
+
+Ketentuan teknis:
+- Gabungkan HTML, CSS, dan JavaScript dalam satu file.
+- Nama file adalah index.html.
+- Jangan menggunakan file tambahan atau library eksternal.
+- Pastikan semua tombol dan fitur kuis berfungsi.
+- Tampilkan seluruh kode secara lengkap dalam satu blok kode agar mudah disalin ke GitHub.</textarea>
+
+<button type="button" class="tombol-salin" onclick="salinTeks('prompt-contoh','pesan-prompt')">
+    Salin Prompt
+</button>
+
+<p id="pesan-prompt" class="pesan-salin" aria-live="polite"></p>
+
+</div>
+
+<h2>Langkah 3: Mengambil Kode dari AI</h2>
 
 <div class="langkah">
     <div class="nomor">1</div>
     <div class="isi">
-        <b>HTML</b> adalah bahasa untuk menyusun
-        struktur halaman website, seperti judul,
-        paragraf, gambar, dan tautan.
+        Setelah prompt dikirim, AI akan membuat kode
+        website sesuai instruksi kita.
     </div>
 </div>
 
 <div class="langkah">
     <div class="nomor">2</div>
     <div class="isi">
-        <b>CSS</b> digunakan untuk mengatur tampilan
-        website, seperti warna, ukuran tulisan,
-        dan tata letak.
+        Cari kotak kode yang ditampilkan AI.
+        Biasanya kode ditandai dengan tulisan
+        <b>HTML</b> atau <b>html</b>.
     </div>
 </div>
 
-<h2>Langkah 3: Membuat File Website</h2>
+<div class="langkah">
+    <div class="nomor">3</div>
+    <div class="isi">
+        Klik tombol <b>Copy</b> atau ikon salin
+        pada kotak kode tersebut.
+    </div>
+</div>
+
+<div class="langkah">
+    <div class="nomor">4</div>
+    <div class="isi">
+        Jika tidak ada tombol Copy, blok seluruh kode
+        dengan mouse, lalu tekan <b>Ctrl + C</b>.
+    </div>
+</div>
+
+<div class="kotak-info">
+    <b>Ingat!</b>
+    <p>
+    Yang kita salin adalah kode HTML, CSS, dan JavaScript
+    dari kotak kode AI, bukan penjelasan atau percakapan
+    AI di luar kotak kode.
+    </p>
+</div>
+
+<h2>Langkah 4: Membuat File index.html di GitHub</h2>
 
 <div class="langkah">
     <div class="nomor">1</div>
     <div class="isi">
-        Buka repository GitHub Anda.
+        Buka repository yang sudah dibuat sebelumnya.
     </div>
 </div>
 
 <div class="langkah">
     <div class="nomor">2</div>
     <div class="isi">
-        Klik tanda <b>+</b>, lalu pilih
+        Klik <b>Add file</b>, kemudian pilih
         <b>Create new file</b>.
     </div>
 </div>
@@ -250,44 +381,40 @@ footer {
 <div class="langkah">
     <div class="nomor">4</div>
     <div class="isi">
-        Masukkan kode HTML untuk membuat
-        halaman website pertama.
+        Klik area editor kode untuk menempatkan kursor.
     </div>
 </div>
 
-<h2>Langkah 4: Mendesain Website dengan CSS</h2>
+<div class="langkah">
+    <div class="nomor">5</div>
+    <div class="isi">
+        Tekan <b>Ctrl + V</b> untuk menempelkan
+        kode yang sudah disalin dari AI.
+    </div>
+</div>
+
+<h2>Langkah 5: Menyimpan Kode ke GitHub</h2>
 
 <div class="langkah">
     <div class="nomor">1</div>
     <div class="isi">
-        Tambahkan CSS untuk memperindah
-        tampilan halaman website.
+        Periksa kembali apakah seluruh kode sudah
+        masuk ke editor GitHub.
     </div>
 </div>
 
 <div class="langkah">
     <div class="nomor">2</div>
     <div class="isi">
-        Atur warna, jenis huruf, gambar,
-        latar belakang, dan tata letak.
-    </div>
-</div>
-
-<h2>Langkah 5: Menyimpan File ke GitHub</h2>
-
-<div class="langkah">
-    <div class="nomor">1</div>
-    <div class="isi">
-        Klik <b>Commit changes</b> untuk
-        menyimpan file ke repository.
+        Klik <b>Commit changes</b> untuk menyimpan file.
     </div>
 </div>
 
 <div class="langkah">
-    <div class="nomor">2</div>
+    <div class="nomor">3</div>
     <div class="isi">
         Pastikan file <code>index.html</code>
-        sudah muncul di repository.
+        sudah terlihat di daftar repository.
     </div>
 </div>
 
@@ -310,108 +437,80 @@ footer {
 <div class="langkah">
     <div class="nomor">3</div>
     <div class="isi">
-        Pilih branch <b>main</b> dan folder
-        <b>/(root)</b>, kemudian klik Save.
+        Pada bagian sumber penerbitan, pilih branch
+        <b>main</b> dan folder <b>/(root)</b>.
     </div>
 </div>
 
 <div class="langkah">
     <div class="nomor">4</div>
     <div class="isi">
-        Tunggu sampai website berhasil diterbitkan.
+        Klik <b>Save</b> dan tunggu proses penerbitan
+        website selesai.
     </div>
 </div>
 
-<h2>Langkah 7: Melihat Website Pribadi</h2>
+<h2>Langkah 7: Membuka dan Membagikan Website</h2>
 
 <div class="langkah">
     <div class="nomor">1</div>
     <div class="isi">
-        Buka alamat website yang diberikan GitHub Pages.
+        Buka kembali menu <b>Settings → Pages</b>.
     </div>
 </div>
 
 <div class="langkah">
     <div class="nomor">2</div>
     <div class="isi">
-        Periksa tampilan website melalui browser.
+        Cari alamat website yang diberikan GitHub Pages.
     </div>
 </div>
 
 <div class="langkah">
     <div class="nomor">3</div>
     <div class="isi">
-        Bagikan alamat website kepada teman,
-        guru, atau orang lain.
+        Klik alamat tersebut untuk melihat hasil website.
     </div>
 </div>
 
-<h2>Praktik: Membuat Website Pribadi</h2>
-
-<p>
-Berikut contoh kode HTML sederhana untuk membuat
-website pribadi. Silakan salin kode dan praktikkan
-di komputer masing-masing.
-</p>
-
-<div class="kotak-kode">
-
-<textarea id="kode-contoh" readonly><!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Website Pribadi Saya</title>
-
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f0f4f8;
-    text-align: center;
-    padding: 40px;
-}
-
-.kartu {
-    background: white;
-    max-width: 600px;
-    margin: auto;
-    padding: 30px;
-    border-radius: 15px;
-}
-
-h1 {
-    color: #174a78;
-}
-</style>
-</head>
-
-<body>
-
-<div class="kartu">
-    <h1>Selamat Datang!</h1>
-    <h2>Nama Saya: Tuliskan Nama Anda</h2>
-    <p>Saya sedang belajar membuat website pribadi.</p>
-    <h3>Tentang Saya</h3>
-    <p>Saya senang belajar teknologi dan AI.</p>
-</div>
-
-</body>
-</html></textarea>
-
-<button type="button" class="tombol-salin" onclick="salinKode()">
-    Salin Kode HTML
-</button>
-
-<p id="pesan-salin" aria-live="polite"></p>
-
+<div class="langkah">
+    <div class="nomor">4</div>
+    <div class="isi">
+        Jika website sudah berjalan dengan baik,
+        bagikan alamatnya kepada siswa, guru,
+        atau orang lain.
+    </div>
 </div>
 
 <div class="tips">
-    <h3>Tips</h3>
-    Buat website pribadi dengan informasi yang
-    menarik, seperti nama, foto, profil, pendidikan,
-    hobi, dan karya. Mulailah dengan desain sederhana
-    kemudian kembangkan secara bertahap.
+    <h3>Tips Penting</h3>
+    <p>
+    1. Berikan prompt yang jelas dan lengkap kepada AI.
+    </p>
+    <p>
+    2. Salin seluruh kode, jangan hanya sebagian.
+    </p>
+    <p>
+    3. Pastikan nama file adalah
+    <code>index.html</code>.
+    </p>
+    <p>
+    4. Periksa hasil website setelah diterbitkan.
+    </p>
+    <p>
+    5. Jika ada kesalahan, mintalah bantuan AI
+    untuk memperbaiki kode.
+    </p>
+</div>
+
+<div class="kotak-info">
+    <h3>Refleksi Pembelajaran</h3>
+    <p>
+    Sekarang Anda telah mempelajari cara membuat website
+    dengan bantuan AI dan GitHub. Cobalah membuat website
+    sederhana lainnya, seperti profil sekolah, media
+    pembelajaran, atau kuis matematika.
+    </p>
 </div>
 
 </div>
@@ -423,13 +522,13 @@ h1 {
 </footer>
 
 <script>
-async function salinKode() {
-    const area = document.getElementById("kode-contoh");
-    const pesan = document.getElementById("pesan-salin");
+async function salinTeks(idArea, idPesan) {
+    const area = document.getElementById(idArea);
+    const pesan = document.getElementById(idPesan);
 
     try {
         await navigator.clipboard.writeText(area.value);
-        pesan.innerText = "Berhasil! Kode HTML sudah disalin.";
+        pesan.innerText = "Berhasil disalin! Silakan tempelkan ke ChatGPT.";
     } catch (error) {
         area.focus();
         area.select();
@@ -437,8 +536,8 @@ async function salinKode() {
         const berhasil = document.execCommand("copy");
 
         pesan.innerText = berhasil
-            ? "Berhasil! Kode HTML sudah disalin."
-            : "Silakan salin kode secara manual.";
+            ? "Berhasil disalin!"
+            : "Silakan pilih dan salin teks secara manual.";
     }
 }
 </script>
