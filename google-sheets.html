@@ -19,113 +19,197 @@ body {
     line-height: 1.7;
 }
 
+/* HEADER */
 header {
     background: linear-gradient(135deg, #12345a, #2675bd);
     color: white;
     text-align: center;
-    padding: 45px 20px;
+    padding: 55px 20px;
 }
 
 header h1 {
-    margin: 0 0 10px;
+    margin: 0 0 12px;
+    font-size: 30px;
 }
 
+header p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* TOMBOL KEMBALI */
+.navigasi {
+    max-width: 1000px;
+    margin: 25px auto 0;
+    padding: 0 18px;
+}
+
+.tombol-kembali {
+    display: inline-block;
+    background: #2675bd;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.tombol-kembali:hover {
+    background: #174b7a;
+}
+
+/* KONTEN */
 .container {
     max-width: 1000px;
-    margin: 30px auto;
+    margin: 25px auto 40px;
     padding: 0 18px;
 }
 
 .card {
     background: white;
-    padding: 25px;
-    margin-bottom: 22px;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    padding: 28px;
+    margin-bottom: 24px;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
 }
 
 h2 {
     color: #174b7a;
+    border-bottom: 2px solid #e4edf7;
+    padding-bottom: 10px;
+    margin-top: 0;
 }
 
 h3 {
     color: #2675bd;
+    margin-top: 0;
 }
 
+p {
+    margin-top: 10px;
+}
+
+li {
+    margin-bottom: 7px;
+}
+
+/* LANGKAH */
 .langkah {
     border-left: 5px solid #2675bd;
-    padding-left: 16px;
-    margin: 25px 0;
+    padding: 18px 20px;
+    margin: 28px 0;
+    background: #fbfdff;
+    border-radius: 0 10px 10px 0;
 }
 
+.langkah h3 {
+    margin-bottom: 14px;
+}
+
+/* CATATAN */
 .catatan {
     background: #eaf4ff;
-    padding: 15px;
+    border-left: 4px solid #2675bd;
+    padding: 16px;
     border-radius: 8px;
-    margin: 15px 0;
+    margin: 18px 0;
 }
 
 .peringatan {
     background: #fff4df;
-    padding: 15px;
+    border-left: 4px solid #e5a323;
+    padding: 16px;
     border-radius: 8px;
-    margin: 15px 0;
+    margin: 18px 0;
 }
 
+/* KOTAK KODE */
 .kotak-kode {
     background: #172638;
     color: #e8f0fa;
     padding: 18px;
     border-radius: 10px;
-    overflow-x: auto;
-    margin-top: 12px;
+    overflow: hidden;
+    margin: 15px 0 20px;
 }
 
 .kotak-kode textarea {
+    display: block;
     width: 100%;
     min-height: 280px;
     background: transparent;
     color: #e8f0fa;
     border: none;
+    outline: none;
     resize: vertical;
     font-family: Consolas, monospace;
     font-size: 13px;
-    line-height: 1.6;
+    line-height: 1.7;
+    white-space: pre;
 }
 
 .tombol-salin {
     background: #2675bd;
     color: white;
     border: none;
-    padding: 10px 17px;
+    padding: 10px 18px;
     border-radius: 7px;
     cursor: pointer;
-    margin-bottom: 10px;
+    font-weight: bold;
+    margin-bottom: 12px;
 }
 
 .tombol-salin:hover {
     background: #174b7a;
 }
 
+/* LINK */
+a {
+    color: #2675bd;
+}
+
+/* FOOTER */
 footer {
     background: #12345a;
     color: white;
     text-align: center;
-    padding: 22px;
-    margin-top: 40px;
+    padding: 25px 15px;
+    margin-top: 45px;
 }
 
-a {
-    color: #2675bd;
-    font-weight: bold;
+footer p {
+    margin: 5px;
 }
 
+/* TAMPILAN HP */
 @media(max-width:600px) {
-    header h1 {
-        font-size: 24px;
+    header {
+        padding: 40px 18px;
     }
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
     .card {
-        padding: 18px;
+        padding: 19px;
+    }
+
+    .langkah {
+        padding: 15px;
+    }
+
+    .kotak-kode {
+        padding: 12px;
+    }
+
+    .kotak-kode textarea {
+        font-size: 12px;
     }
 }
 </style>
@@ -137,6 +221,12 @@ a {
     <h1>MENGHUBUNGKAN KUIS HTML KE GOOGLE SHEETS</h1>
     <p>Belajar mengumpulkan hasil kuis siswa secara otomatis</p>
 </header>
+
+<div class="navigasi">
+    <a class="tombol-kembali" href="index.html">
+        ← Kembali ke Halaman Utama
+    </a>
+</div>
 
 <div class="container">
 
@@ -247,6 +337,7 @@ a {
             <li>Klik <b>Terapkan</b>.</li>
             <li>Jika diminta izin, ikuti proses pemberian izin akun Google.</li>
         </ol>
+
         <div class="catatan">
             <b>Perhatian:</b> Pengaturan akses Siapa saja memungkinkan permintaan dari pengguna lain. Jangan menempatkan informasi rahasia atau data pribadi sensitif dalam spreadsheet.
         </div>
@@ -321,6 +412,7 @@ try {
             <li>Buka Google Sheets.</li>
             <li>Periksa apakah nama, kelas, nilai, dan jumlah jawaban benar sudah muncul.</li>
         </ol>
+
         <div class="catatan">
             <b>Berhasil!</b> Jika data siswa muncul pada baris baru di Google Sheets, kuis sudah berhasil terhubung.
         </div>
@@ -350,16 +442,23 @@ try {
     </ol>
 </section>
 
+<div class="navigasi">
+    <a class="tombol-kembali" href="index.html">
+        ← Kembali ke Halaman Utama
+    </a>
+</div>
+
 </div>
 
 <footer>
-    <p>PEMBELAJARAN BERSAMA AI</p>
+    <p><b>PEMBELAJARAN BERSAMA AI</b></p>
     <p>Belajar, Berbagi, dan Berkarya Bersama AI</p>
 </footer>
 
 <script>
 function salinKode(id) {
     const area = document.getElementById(id);
+
     area.select();
     area.setSelectionRange(0, 99999);
 
