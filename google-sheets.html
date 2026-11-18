@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menghubungkan Kuis ke Google Sheets</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f5fc;
+    color: #24344d;
+    margin: 0;
+    line-height: 1.7;
+}
+
+header {
+    background: linear-gradient(135deg, #12345a, #2675bd);
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+header h1 {
+    margin: 0 0 10px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 18px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+}
+
+h2 {
+    color: #174b7a;
+}
+
+h3 {
+    color: #2675bd;
+}
+
+.langkah {
+    border-left: 5px solid #2675bd;
+    padding-left: 16px;
+    margin: 25px 0;
+}
+
+.catatan {
+    background: #eaf4ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.peringatan {
+    background: #fff4df;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.kotak-kode {
+    background: #172638;
+    color: #e8f0fa;
+    padding: 18px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin-top: 12px;
+}
+
+.kotak-kode textarea {
+    width: 100%;
+    min-height: 280px;
+    background: transparent;
+    color: #e8f0fa;
+    border: none;
+    resize: vertical;
+    font-family: Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.tombol-salin {
+    background: #2675bd;
+    color: white;
+    border: none;
+    padding: 10px 17px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.tombol-salin:hover {
+    background: #174b7a;
+}
+
+footer {
+    background: #12345a;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    margin-top: 40px;
+}
+
+a {
+    color: #2675bd;
+    font-weight: bold;
+}
+
+@media(max-width:600px) {
+    header h1 {
+        font-size: 24px;
+    }
+    .card {
+        padding: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>MENGHUBUNGKAN KUIS HTML KE GOOGLE SHEETS</h1>
+    <p>Belajar mengumpulkan hasil kuis siswa secara otomatis</p>
+</header>
+
+<div class="container">
+
+<section class="card">
+    <h2>Tujuan Pembelajaran</h2>
+    <p>Setelah mempelajari materi ini, guru diharapkan mampu:</p>
+    <ul>
+        <li>Membuat Google Sheets untuk menyimpan nilai siswa.</li>
+        <li>Menggunakan Google Apps Script.</li>
+        <li>Menghubungkan kuis HTML dengan Google Sheets.</li>
+        <li>Menguji pengiriman hasil kuis siswa.</li>
+    </ul>
+</section>
+
+<section class="card">
+    <h2>A. Mengenal Cara Kerjanya</h2>
+    <p>Ketika siswa menyelesaikan kuis pada website, data berupa nama, kelas, nilai, dan jumlah jawaban benar dikirimkan ke Google Sheets melalui Google Apps Script.</p>
+
+    <div class="catatan">
+        <b>Alur pengiriman data:</b>
+        <p>Website Kuis → Google Apps Script → Google Sheets → Guru melihat hasil siswa.</p>
+    </div>
+</section>
+
+<section class="card">
+    <h2>B. Langkah-Langkah Menghubungkan Kuis</h2>
+
+    <div class="langkah">
+        <h3>Langkah 1. Membuat Google Sheets</h3>
+        <ol>
+            <li>Buka Google Drive.</li>
+            <li>Klik tombol <b>Baru</b>.</li>
+            <li>Pilih <b>Google Spreadsheet</b>.</li>
+            <li>Beri nama file, misalnya Hasil Kuis Matematika.</li>
+            <li>Buat judul kolom pada baris pertama:</li>
+        </ol>
+        <div class="catatan">
+            Waktu | Nama | Kelas | Nilai | Jumlah Benar
+        </div>
+        <p>Google Sheets ini akan menjadi tempat penyimpanan hasil kuis siswa.</p>
+    </div>
+
+    <div class="langkah">
+        <h3>Langkah 2. Membuka Google Apps Script</h3>
+        <ol>
+            <li>Buka Google Sheets yang sudah dibuat.</li>
+            <li>Klik menu <b>Ekstensi</b>.</li>
+            <li>Pilih <b>Apps Script</b>.</li>
+            <li>Tab Google Apps Script akan terbuka.</li>
+            <li>Hapus kode bawaan yang ada pada halaman editor.</li>
+        </ol>
+    </div>
+
+    <div class="langkah">
+        <h3>Langkah 3. Memasukkan Kode Google Apps Script</h3>
+        <p>Salin kode berikut dan tempelkan ke editor Apps Script.</p>
+
+        <div class="kotak-kode">
+            <button class="tombol-salin" onclick="salinKode('kodeApps')">Salin Kode</button>
+            <textarea id="kodeApps" readonly spellcheck="false">function doPost(e) {
+  try {
+    const sheet = SpreadsheetApp
+      .getActiveSpreadsheet()
+      .getSheets()[0];
+
+    const data = JSON.parse(e.postData.contents);
+
+    sheet.appendRow([
+      new Date(),
+      data.nama,
+      data.kelas,
+      data.nilai,
+      data.jumlahBenar
+    ]);
+
+    return ContentService
+      .createTextOutput(JSON.stringify({
+        status: "berhasil",
+        pesan: "Hasil kuis berhasil disimpan."
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch (error) {
+    return ContentService
+      .createTextOutput(JSON.stringify({
+        status: "gagal",
+        pesan: error.toString()
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}</textarea>
+        </div>
+
+        <ol>
+            <li>Klik ikon <b>Simpan</b>.</li>
+            <li>Tunggu sampai kode tersimpan.</li>
+        </ol>
+    </div>
+
+    <div class="langkah">
+        <h3>Langkah 4. Menerapkan sebagai Web App</h3>
+        <ol>
+            <li>Klik tombol <b>Terapkan</b> di kanan atas.</li>
+            <li>Pilih <b>Deployment baru</b>.</li>
+            <li>Pilih jenis penerapan <b>Aplikasi web</b>.</li>
+            <li>Pada bagian Jalankan sebagai, pilih <b>Saya</b>.</li>
+            <li>Pada bagian Siapa yang memiliki akses, pilih <b>Siapa saja</b>.</li>
+            <li>Klik <b>Terapkan</b>.</li>
+            <li>Jika diminta izin, ikuti proses pemberian izin akun Google.</li>
+        </ol>
+        <div class="catatan">
+            <b>Perhatian:</b> Pengaturan akses Siapa saja memungkinkan permintaan dari pengguna lain. Jangan menempatkan informasi rahasia atau data pribadi sensitif dalam spreadsheet.
+        </div>
+    </div>
+
+    <div class="langkah">
+        <h3>Langkah 5. Menyalin URL Web App</h3>
+        <p>Setelah penerapan berhasil, Google akan menampilkan URL Aplikasi Web.</p>
+        <ol>
+            <li>Salin URL yang berakhiran <b>/exec</b>.</li>
+            <li>Simpan URL tersebut karena akan digunakan pada kode HTML kuis.</li>
+        </ol>
+    </div>
+
+    <div class="langkah">
+        <h3>Langkah 6. Menghubungkan URL ke Kuis HTML</h3>
+        <p>Buka file kuis HTML. Pada bagian JavaScript, masukkan URL Web App yang sudah disalin.</p>
+
+        <div class="kotak-kode">
+            <button class="tombol-salin" onclick="salinKode('kodeUrl')">Salin Kode</button>
+            <textarea id="kodeUrl" readonly spellcheck="false">const SCRIPT_URL = "TEMPELKAN_URL_WEB_APP_DI_SINI";</textarea>
+        </div>
+
+        <p>Ganti tulisan <b>TEMPELKAN_URL_WEB_APP_DI_SINI</b> dengan URL Web App milik masing-masing guru.</p>
+    </div>
+
+    <div class="langkah">
+        <h3>Langkah 7. Memastikan Kode Pengiriman Data</h3>
+        <p>Pastikan kode JavaScript kuis memiliki bagian pengiriman data seperti berikut. Contoh ini menggunakan nama variabel yang sama dengan kode Apps Script di atas.</p>
+
+        <div class="kotak-kode">
+            <button class="tombol-salin" onclick="salinKode('kodeKirim')">Salin Kode</button>
+            <textarea id="kodeKirim" readonly spellcheck="false">const data = {
+  nama: nama,
+  kelas: kelas,
+  nilai: nilai,
+  jumlahBenar: jumlahBenar
+};
+
+try {
+  await fetch(SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8"
+    },
+    body: JSON.stringify(data)
+  });
+
+  status.textContent =
+    "Permintaan pengiriman telah dilakukan.";
+
+} catch (error) {
+  status.textContent =
+    "Terjadi masalah saat mengirim.";
+}</textarea>
+        </div>
+
+        <div class="peringatan">
+            <b>Catatan penting:</b> Mode no-cors tidak memungkinkan halaman membaca jawaban dari Apps Script. Pesan permintaan pengiriman bukan bukti bahwa data sudah tersimpan. Bukti keberhasilan adalah adanya baris data baru di Google Sheets.
+        </div>
+    </div>
+
+    <div class="langkah">
+        <h3>Langkah 8. Menguji Kuis</h3>
+        <ol>
+            <li>Simpan perubahan file HTML.</li>
+            <li>Buka halaman kuis melalui website.</li>
+            <li>Masukkan nama dan kelas siswa.</li>
+            <li>Jawab seluruh pertanyaan.</li>
+            <li>Klik tombol kirim.</li>
+            <li>Buka Google Sheets.</li>
+            <li>Periksa apakah nama, kelas, nilai, dan jumlah jawaban benar sudah muncul.</li>
+        </ol>
+        <div class="catatan">
+            <b>Berhasil!</b> Jika data siswa muncul pada baris baru di Google Sheets, kuis sudah berhasil terhubung.
+        </div>
+    </div>
+</section>
+
+<section class="card">
+    <h2>C. Jika Data Tidak Masuk</h2>
+    <ul>
+        <li>Periksa kembali URL Web App pada file HTML.</li>
+        <li>Pastikan URL berakhiran /exec.</li>
+        <li>Periksa pengaturan akses Web App.</li>
+        <li>Pastikan kode Apps Script sudah disimpan.</li>
+        <li>Periksa menu Eksekusi di Apps Script untuk melihat apakah ada kesalahan.</li>
+        <li>Pastikan Google Sheets yang dibuka adalah spreadsheet yang terhubung dengan Apps Script.</li>
+    </ul>
+</section>
+
+<section class="card">
+    <h2>D. Latihan Mandiri</h2>
+    <ol>
+        <li>Buat satu Google Sheets untuk menampung hasil kuis.</li>
+        <li>Buat Apps Script dan terapkan sebagai Web App.</li>
+        <li>Hubungkan URL Web App ke kuis HTML.</li>
+        <li>Lakukan uji coba pengiriman nilai.</li>
+        <li>Pastikan hasil kuis masuk ke Google Sheets.</li>
+    </ol>
+</section>
+
+</div>
+
+<footer>
+    <p>PEMBELAJARAN BERSAMA AI</p>
+    <p>Belajar, Berbagi, dan Berkarya Bersama AI</p>
+</footer>
+
+<script>
+function salinKode(id) {
+    const area = document.getElementById(id);
+    area.select();
+    area.setSelectionRange(0, 99999);
+
+    navigator.clipboard.writeText(area.value)
+        .then(function() {
+            alert("Kode berhasil disalin!");
+        })
+        .catch(function() {
+            alert("Silakan salin kode secara manual dengan Ctrl+C.");
+        });
+}
+</script>
+
+</body>
+</html>
