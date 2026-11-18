@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -7,9 +7,7 @@
 <title>Kuis Transformasi Fungsi</title>
 
 <style>
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
     font-family: Arial, sans-serif;
@@ -26,9 +24,7 @@ header {
     padding: 35px 20px;
 }
 
-header h1 {
-    margin: 0 0 10px;
-}
+header h1 { margin: 0 0 10px; }
 
 .container {
     max-width: 850px;
@@ -44,9 +40,7 @@ header h1 {
     box-shadow: 0 4px 15px rgba(0,0,0,0.07);
 }
 
-h2 {
-    color: #174c7e;
-}
+h2 { color: #174c7e; }
 
 label {
     display: block;
@@ -78,13 +72,9 @@ input[type="text"] {
     cursor: pointer;
 }
 
-.pilihan:hover {
-    background: #e4effb;
-}
+.pilihan:hover { background: #e4effb; }
 
-.pilihan input {
-    margin-right: 8px;
-}
+.pilihan input { margin-right: 8px; }
 
 button {
     background: #1769aa;
@@ -97,9 +87,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background: #10436f;
-}
+button:hover { background: #10436f; }
 
 button:disabled {
     background: #8299ad;
@@ -127,17 +115,9 @@ footer {
 }
 
 @media(max-width:600px) {
-    header h1 {
-        font-size: 24px;
-    }
-
-    .container {
-        padding: 12px;
-    }
-
-    .card {
-        padding: 18px;
-    }
+    header h1 { font-size: 24px; }
+    .container { padding: 12px; }
+    .card { padding: 18px; }
 }
 </style>
 </head>
@@ -154,7 +134,6 @@ footer {
 
 <div class="card">
     <h2>Identitas Siswa</h2>
-
     <label for="nama">Nama lengkap</label>
     <input type="text" id="nama" placeholder="Masukkan nama lengkap">
 
@@ -172,7 +151,7 @@ footer {
     </p>
 </div>
 
-<form id="formKuis" onsubmit="return false;">
+<form id="formKuis">
 
 <div class="card">
 <h2>Soal Kuis</h2>
@@ -181,7 +160,6 @@ footer {
 <p><b>1.</b> Diketahui fungsi f(x) = x².
 Grafik fungsi digeser 3 satuan ke kanan.
 Bentuk fungsi hasil transformasinya adalah ....</p>
-
 <label class="pilihan"><input type="radio" name="q1" value="A"> A. y = (x + 3)²</label>
 <label class="pilihan"><input type="radio" name="q1" value="B"> B. y = (x - 3)²</label>
 <label class="pilihan"><input type="radio" name="q1" value="C"> C. y = x² + 3</label>
@@ -193,7 +171,6 @@ Bentuk fungsi hasil transformasinya adalah ....</p>
 <p><b>2.</b> Diketahui f(x) = 2x + 1.
 Jika grafik dicerminkan terhadap sumbu-X,
 fungsi hasil transformasinya adalah ....</p>
-
 <label class="pilihan"><input type="radio" name="q2" value="A"> A. y = 2x - 1</label>
 <label class="pilihan"><input type="radio" name="q2" value="B"> B. y = -2x + 1</label>
 <label class="pilihan"><input type="radio" name="q2" value="C"> C. y = -2x - 1</label>
@@ -205,7 +182,6 @@ fungsi hasil transformasinya adalah ....</p>
 <p><b>3.</b> Diketahui f(x) = √x.
 Grafik digeser 4 satuan ke atas.
 Fungsi hasil transformasinya adalah ....</p>
-
 <label class="pilihan"><input type="radio" name="q3" value="A"> A. y = √(x + 4)</label>
 <label class="pilihan"><input type="radio" name="q3" value="B"> B. y = √(x - 4)</label>
 <label class="pilihan"><input type="radio" name="q3" value="C"> C. y = √x - 4</label>
@@ -216,7 +192,6 @@ Fungsi hasil transformasinya adalah ....</p>
 <div class="soal">
 <p><b>4.</b> Grafik fungsi f(x) = |x| dicerminkan
 terhadap sumbu-Y. Fungsi hasil pencerminan adalah ....</p>
-
 <label class="pilihan"><input type="radio" name="q4" value="A"> A. y = -|x|</label>
 <label class="pilihan"><input type="radio" name="q4" value="B"> B. y = |x| + 1</label>
 <label class="pilihan"><input type="radio" name="q4" value="C"> C. y = |x - 1|</label>
@@ -228,7 +203,6 @@ terhadap sumbu-Y. Fungsi hasil pencerminan adalah ....</p>
 <p><b>5.</b> Diketahui f(x) = x².
 Grafik mengalami peregangan vertikal
 dengan faktor 3. Fungsi hasil transformasinya adalah ....</p>
-
 <label class="pilihan"><input type="radio" name="q5" value="A"> A. y = (x + 3)²</label>
 <label class="pilihan"><input type="radio" name="q5" value="B"> B. y = x² + 3</label>
 <label class="pilihan"><input type="radio" name="q5" value="C"> C. y = 3x²</label>
@@ -236,9 +210,7 @@ dengan faktor 3. Fungsi hasil transformasinya adalah ....</p>
 <label class="pilihan"><input type="radio" name="q5" value="E"> E. y = x² - 3</label>
 </div>
 
-<button type="submit" id="tombolKirim">
-    Kirim Jawaban
-</button>
+<button type="submit" id="tombolKirim">Kirim Jawaban</button>
 
 <div id="hasil">
     <h2>Hasil Kuis</h2>
@@ -251,9 +223,7 @@ dengan faktor 3. Fungsi hasil transformasinya adalah ....</p>
 </form>
 </div>
 
-<footer>
-    © 2026 Pembelajaran Bersama AI
-</footer>
+<footer>© 2026 Pembelajaran Bersama AI</footer>
 
 <script>
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHt18haNlom5GLiZh7g2_hEhpFech6v_UId7QbwD3OzRucmz_z1zAWB642PisWkHou/exec";
@@ -268,11 +238,12 @@ const kunciJawaban = {
 
 document.getElementById("formKuis").addEventListener("submit", async function(event) {
     event.preventDefault();
-    
-alert("JavaScript kuis berjalan!");
-    
+
     const nama = document.getElementById("nama").value.trim();
     const kelas = document.getElementById("kelas").value.trim();
+    const tombol = document.getElementById("tombolKirim");
+    const hasil = document.getElementById("hasil");
+    const status = document.getElementById("status");
 
     if (!nama || !kelas) {
         alert("Silakan isi nama dan kelas terlebih dahulu.");
@@ -298,37 +269,47 @@ alert("JavaScript kuis berjalan!");
 
     const nilai = jumlahBenar * 20;
 
-    document.getElementById("hasil").style.display = "block";
-    document.getElementById("nilai").textContent =
-        "Nilai Anda: " + nilai;
-
+    hasil.style.display = "block";
+    document.getElementById("nilai").textContent = "Nilai Anda: " + nilai;
     document.getElementById("benar").textContent =
-    "Jumlah jawaban benar: " + jumlahBenar + " dari 5 soal";
+        "Jumlah jawaban benar: " + jumlahBenar + " dari 5 soal";
 
-// Mengirim hasil kuis ke Google Sheets
-const data = {
-    nama: nama,
-    kelas: kelas,
-    nilai: nilai,
-    jumlahBenar: jumlahBenar
-};
+    tombol.disabled = true;
+    tombol.textContent = "Mengirim...";
 
-fetch(SCRIPT_URL, {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-        "Content-Type": "text/plain;charset=utf-8"
-    },
-    body: JSON.stringify(data)
-})
-.then(() => {
-    alert("Hasil kuis telah dikirim. Silakan periksa Google Sheets.");
-})
-.catch((error) => {
-    alert("Pengiriman gagal: " + error);
+    status.textContent = "Sedang mengirim hasil kuis...";
+
+    const data = {
+        nama: nama,
+        kelas: kelas,
+        nilai: nilai,
+        jumlahBenar: jumlahBenar
+    };
+
+    try {
+        await fetch(SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
+            body: JSON.stringify(data)
+        });
+
+        status.textContent =
+            "Permintaan pengiriman telah dilakukan. Guru akan memeriksa hasilnya di Google Sheets.";
+
+        alert("Pengiriman telah dilakukan. Silakan tunggu konfirmasi dari guru.");
+
+    } catch (error) {
+        status.textContent =
+            "Terjadi masalah saat mengirim. Silakan hubungi guru.";
+
+        tombol.disabled = false;
+        tombol.textContent = "Coba Kirim Lagi";
+    }
 });
-
-}
 </script>
+
 </body>
 </html>
